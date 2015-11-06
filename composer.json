@@ -1,0 +1,19 @@
+{
+    "name": "cullylarson/wp-sync",
+    "type": "library",
+    "description": "A set of command-line tools for syncing Wordpress installs. Easily used for automated deployment.",
+    "keywords": ["wordpress", "command", "sync", "deploy", "deployment"],
+    "homepage": "https://github.com/cullylarson/wp-sync",
+    "license": "MIT",
+    "authors": [{
+        "name": "Cully Larson",
+        "email": "cully.larson@gmail.com"
+    }],
+    "require": {
+        "php": ">=5.3.0",
+        "vlucas/phpdotenv": "~1.1",
+        "cullylarson/wp-deploy-database-sync": "~0.0",
+        "cullylarson/wp-deploy-folder-sync": "~1.0"
+    },
+    "bin": ["bin/wp-push", "bin/wp-pull"]
+}

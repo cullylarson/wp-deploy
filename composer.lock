@@ -1,0 +1,330 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "ba9f4742dcac43f34e856e0708595c4d",
+    "content-hash": "6007568550264294cd692b16778746a1",
+    "packages": [
+        {
+            "name": "cullylarson/local-commands",
+            "version": "v1.0.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cullylarson/local-commands.git",
+                "reference": "7a210ba34496b2aafe0ab6d7e05c37c1ebb46daf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cullylarson/local-commands/zipball/7a210ba34496b2aafe0ab6d7e05c37c1ebb46daf",
+                "reference": "7a210ba34496b2aafe0ab6d7e05c37c1ebb46daf",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Cully\\": "src/Cully"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Cully Larson",
+                    "email": "cully.larson@gmail.com"
+                }
+            ],
+            "description": "A library for executing local shell commands, with support for exit status, standard output, and error output.",
+            "homepage": "https://github.com/cullylarson/local-command",
+            "keywords": [
+                "command-line",
+                "shell"
+            ],
+            "time": "2015-09-08 01:42:59"
+        },
+        {
+            "name": "cullylarson/ssh-commands",
+            "version": "v1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cullylarson/ssh-commands.git",
+                "reference": "5cb06d253dceefe31d31fef3668c3486b2668874"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cullylarson/ssh-commands/zipball/5cb06d253dceefe31d31fef3668c3486b2668874",
+                "reference": "5cb06d253dceefe31d31fef3668c3486b2668874",
+                "shasum": ""
+            },
+            "require": {
+                "cullylarson/local-commands": "~1.0",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Cully\\": "src/Cully"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Cully Larson",
+                    "email": "cully.larson@gmail.com"
+                }
+            ],
+            "description": "A library for executing remote commands, via SSH.  Supports exit status, standard output, and error output.",
+            "homepage": "https://github.com/cullylarson/ssh-command",
+            "keywords": [
+                "command-line",
+                "remote",
+                "ssh"
+            ],
+            "time": "2015-09-08 01:37:35"
+        },
+        {
+            "name": "cullylarson/ssh-copy",
+            "version": "v1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cullylarson/ssh-copy.git",
+                "reference": "f26895c5906b904af9e1b7ca30e8701320f08f13"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cullylarson/ssh-copy/zipball/f26895c5906b904af9e1b7ca30e8701320f08f13",
+                "reference": "f26895c5906b904af9e1b7ca30e8701320f08f13",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "cullylarson/local-commands": "~1.0",
+                "cullylarson/ssh-commands": "~1.0",
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Cully\\": "src/Cully"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Cully Larson",
+                    "email": "cully.larson@gmail.com"
+                }
+            ],
+            "description": "A library for performing remote copies. Copy to/from local, to/from remote, and even between two remote machines.",
+            "homepage": "https://github.com/cullylarson/ssh-copy",
+            "keywords": [
+                "copy",
+                "remote",
+                "ssh"
+            ],
+            "time": "2015-09-12 21:03:41"
+        },
+        {
+            "name": "cullylarson/wp-deploy-database-sync",
+            "version": "v0.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cullylarson/wp-deploy-database-sync.git",
+                "reference": "628aae907c608bb1e65f6384d776824e1a622cef"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cullylarson/wp-deploy-database-sync/zipball/628aae907c608bb1e65f6384d776824e1a622cef",
+                "reference": "628aae907c608bb1e65f6384d776824e1a622cef",
+                "shasum": ""
+            },
+            "require": {
+                "cullylarson/local-commands": "~1.0",
+                "cullylarson/ssh-commands": "~1.0",
+                "cullylarson/ssh-copy": "~1.0",
+                "interconnectit/search-replace-db": "~3.1",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Wordpress\\": "src/Wordpress"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Cully Larson",
+                    "email": "cully.larson@gmail.com"
+                }
+            ],
+            "description": "A library for syncing Wordpress databases.  Supports syncs to and from local and remote machines, and even remote to remote syncs. Useful as part of a deployment system.",
+            "homepage": "https://github.com/cullylarson/wp-deploy-database-sync",
+            "keywords": [
+                "deploy",
+                "wordpress"
+            ],
+            "time": "2015-09-14 02:17:30"
+        },
+        {
+            "name": "cullylarson/wp-deploy-folder-sync",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cullylarson/wp-deploy-folder-sync.git",
+                "reference": "56d6b4072fe617162e86ce01019500056324e807"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cullylarson/wp-deploy-folder-sync/zipball/56d6b4072fe617162e86ce01019500056324e807",
+                "reference": "56d6b4072fe617162e86ce01019500056324e807",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Wordpress\\": "src/Wordpress"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Cully Larson",
+                    "email": "cully.larson@gmail.com"
+                }
+            ],
+            "description": "Library for syncing Wordpress folders, like the uploads folder. Useful for deploying, or pulling changes.",
+            "homepage": "https://github.com/cullylarson/wp-deploy-folder-sync",
+            "keywords": [
+                "deploy",
+                "wordpress"
+            ],
+            "time": "2015-08-31 00:31:18"
+        },
+        {
+            "name": "interconnectit/search-replace-db",
+            "version": "3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/interconnectit/Search-Replace-DB.git",
+                "reference": "28a1f059e4739bca618056dcf3c550a634cf1035"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/interconnectit/Search-Replace-DB/zipball/28a1f059e4739bca618056dcf3c550a634cf1035",
+                "reference": "28a1f059e4739bca618056dcf3c550a634cf1035",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "bin": [
+                "srdb.cli.php"
+            ],
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "srdb.class.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "description": "A PHP search replace tool for quickly modifying a string throughout a database. Useful for changing the base URL when migrating a WordPress site from development to production.",
+            "homepage": "https://github.com/interconnectit/Search-Replace-DB",
+            "time": "2015-07-07 15:44:12"
+        },
+        {
+            "name": "vlucas/phpdotenv",
+            "version": "v1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/vlucas/phpdotenv.git",
+                "reference": "0cac554ce06277e33ddf9f0b7ade4b8bbf2af3fa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/0cac554ce06277e33ddf9f0b7ade4b8bbf2af3fa",
+                "reference": "0cac554ce06277e33ddf9f0b7ade4b8bbf2af3fa",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Dotenv": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD"
+            ],
+            "authors": [
+                {
+                    "name": "Vance Lucas",
+                    "email": "vance@vancelucas.com",
+                    "homepage": "http://www.vancelucas.com"
+                }
+            ],
+            "description": "Loads environment variables from `.env` to `getenv()`, `$_ENV` and `$_SERVER` automagically.",
+            "homepage": "http://github.com/vlucas/phpdotenv",
+            "keywords": [
+                "dotenv",
+                "env",
+                "environment"
+            ],
+            "time": "2015-05-30 15:59:26"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": ">=5.3.0"
+    },
+    "platform-dev": []
+}

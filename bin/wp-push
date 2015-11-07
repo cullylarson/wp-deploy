@@ -1,0 +1,18 @@
+#!/usr/bin/env php
+<?php
+
+require(__DIR__ . "/../src/WpSync/Setup.php");
+
+WpSync\Setup::doSetup();
+WpSync\Environment::loadDotEnv();
+$ui = new WpSync\UserInterface();
+
+try {
+    $config = WpSync\Config::fromEnv();
+}
+catch(WpSync\Exception\ConfigException $e) {
+    $ui->quit("Configuration Error: " . $e->getMessage());
+}
+
+if( !$ui->ask("(DESTINATION OVERWRITE) You are about to push source changes to a destination install.  Do you want to continue?", "yes") ) die("ABORTING.\n");
+

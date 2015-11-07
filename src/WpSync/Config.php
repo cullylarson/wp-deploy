@@ -8,6 +8,15 @@ class Config {
     public $source = [];
     public $dest = [];
 
+    public function switchSourceDest() {
+        $newConfig = new Config();
+
+        $newConfig->source = $this->dest;
+        $newConfig->dest = $this->source;
+
+        return $newConfig;
+    }
+
     /**
      * @return Config
      * @throws ConfigException

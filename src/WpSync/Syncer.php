@@ -77,7 +77,7 @@ class Syncer {
     public function doSync() {
         $ui = new UserInterface();
 
-        $statusCallback = function(Wordpress\Deploy\FolderSync\Status $status) {
+        $statusCallback = function($status) {
             echo $status->Timestamp . " -- ";
 
             if( $status->isError() ) echo "ERROR: ";

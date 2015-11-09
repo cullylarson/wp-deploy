@@ -48,6 +48,7 @@ class Syncer {
             "source" => $this->buildMachineDbSync($config->source),
             "dest" => $this->buildMachineDbSync($config->dest),
             "search_replace" => empty($config->dest["search_replace"]) ? [] : $config->dest["search_replace"],
+            "local_tmp" => $config->localTmp,
         ];
     }
 
@@ -74,6 +75,29 @@ class Syncer {
     public function doSync() {
         $ui = new UserInterface();
 
+        $statusCallback = function(Wordpress\Deploy\FolderSync\Status $status) {
+            echo $status->Timestamp . " -- ";
+
+            if( $status->isError() ) echo "ERROR: ";
+            if( $status->isWarning() ) echo "WARNING: ";
+            if( $status->isRawOutput() ) echo "================\n";
+
+            echo $status->Message;
+
+            if( $status->isRawOutput() ) echo "================\n";
+        };
+
         $ui->say("o  Syncing upload folders from {$this->sourceName} to {$this->destName}.");
+        $folderSyncSuccess = $this->folderSync->sync($statusCallback);
+
+        $ui->say("o  Syncing database from {$this->sourceName} to {$this->destName}.");
+        $databaseSyncSuccess = $this->databaseSync->sync($statusCallback);
+
+        if(!$folderSyncSuccess || !$databaseSyncSuccess) {
+            $ui->say("o  Completed with errors.");
+        }
+        else {
+            $ui->say("o  Completed successfully!");
+        }
     }
 }

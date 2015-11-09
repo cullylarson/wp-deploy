@@ -7,12 +7,14 @@ use WpSync\Exception\ConfigException;
 class Config {
     public $source = [];
     public $dest = [];
+    public $localTmp;
 
     public function switchSourceDest() {
         $newConfig = new Config();
 
         $newConfig->source = $this->dest;
         $newConfig->dest = $this->source;
+        $newConfig->localTmp = $this->localTmp;
 
         return $newConfig;
     }
@@ -28,6 +30,7 @@ class Config {
 
         $config->source = self::getSet("SOURCE");
         $config->dest = self::getSet("DEST");
+        $config->localTmp = getenv("LOCAL_TMP") ? getenv("LOCAL_TMP") : null;
     }
 
     private static function getSearchReplace($type) {
@@ -102,6 +105,14 @@ class Config {
     private static function ensureRequired() {
         self::ensureRequiredSet("SOURCE");
         self::ensureRequiredSet("DEST");
+        self::ensureLocalTmp();
+    }
+
+    private static function ensureLocalTmp() {
+        // if this is remote to remote, then local tmp is required
+        if(empty(getenv("SOURCE_IS_LOCAL")) && empty(getenv("DEST_IS_LOCAL"))) {
+            if(empty(getenv("LOCAL_TMP"))) throw new ConfigException("LOCAL_TMP must be provided for remote to remote syncs.");
+        }
     }
 
     private static function ensureRequiredSet($type) {

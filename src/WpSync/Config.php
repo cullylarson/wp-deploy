@@ -43,15 +43,15 @@ class Config {
             if(empty($envValue)) continue;
 
             // not what we're looking for
-            if(!preg_match("/^WP_{$type}_SEARCH(.+)$/", $envName, $matches)) continue;
+            if(!preg_match("/^{$type}_WP_SEARCH(.+)$/", $envName, $matches)) continue;
 
             // can't find the associated replace
-            if(empty($_ENV["WP_{$type}_REPLACE{$matches[1]}"])) {
+            if(empty($_ENV["{$type}_WP_REPLACE{$matches[1]}"])) {
                 throw new ConfigException("Could not find REPLACE associated with {$envName}.");
             }
 
             // found one!
-            $search_replace[$envValue] = $_ENV["WP_{$type}_REPLACE{$matches[1]}"];
+            $search_replace[$envValue] = $_ENV["{$type}_WP_REPLACE{$matches[1]}"];
         }
 
         return $search_replace;

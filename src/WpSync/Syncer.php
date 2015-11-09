@@ -35,7 +35,7 @@ class Syncer {
 
     private function buildFolderParam(array $machineConfig) {
         if(!empty($machineConfig['ssh'])) {
-            return "{$machineConfig['ssh']['username']}@{$machineConfig['ssh']['username']}:{$machineConfig['uploads']}";
+            return "{$machineConfig['ssh']['username']}@{$machineConfig['ssh']['host']}:{$machineConfig['uploads']}";
         }
         else {
             return $machineConfig['uploads'];
@@ -82,9 +82,9 @@ class Syncer {
 
             if( $status->isError() ) echo "ERROR: ";
             if( $status->isWarning() ) echo "WARNING: ";
-            if( $status->isRawOutput() ) echo "================\n";
+            if( $status->isRawOutput() ) echo "\n================\n";
 
-            echo $status->Message;
+            echo $status->Message . "\n";
 
             if( $status->isRawOutput() ) echo "================\n";
         };

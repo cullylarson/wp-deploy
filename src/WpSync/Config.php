@@ -31,6 +31,8 @@ class Config {
         $config->source = self::getSet("SOURCE");
         $config->dest = self::getSet("DEST");
         $config->localTmp = getenv("LOCAL_TMP") ? getenv("LOCAL_TMP") : null;
+
+        return $config;
     }
 
     private static function getSearchReplace($type) {

@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9def18ccd54ef3e68f39eff4dd96c274",
-    "content-hash": "8119467b484422814c2917884bc073d3",
+    "hash": "98369986272a6ea4def5df4b84c0c7be",
+    "content-hash": "c78f8600f36f6d380dd4abc78fcda6d9",
     "packages": [
         {
             "name": "cullylarson/local-commands",
@@ -146,16 +146,16 @@
         },
         {
             "name": "cullylarson/wp-deploy-database-sync",
-            "version": "v0.0.1",
+            "version": "v0.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cullylarson/wp-deploy-database-sync.git",
-                "reference": "628aae907c608bb1e65f6384d776824e1a622cef"
+                "reference": "f8497099fecd52f9b84a3cd2452f61ad44b025e3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cullylarson/wp-deploy-database-sync/zipball/628aae907c608bb1e65f6384d776824e1a622cef",
-                "reference": "628aae907c608bb1e65f6384d776824e1a622cef",
+                "url": "https://api.github.com/repos/cullylarson/wp-deploy-database-sync/zipball/f8497099fecd52f9b84a3cd2452f61ad44b025e3",
+                "reference": "f8497099fecd52f9b84a3cd2452f61ad44b025e3",
                 "shasum": ""
             },
             "require": {
@@ -184,13 +184,13 @@
                     "email": "cully.larson@gmail.com"
                 }
             ],
-            "description": "A library for syncing Wordpress databases.  Supports syncs to and from local and remote machines, and even remote to remote syncs. Useful as part of a deployment system.",
+            "description": "A library for syncing Wordpress databases.  Supports syncs to and from local and remote machines, and even remote to remote syncs. Also supports search and replace. Useful as part of a deployment system.",
             "homepage": "https://github.com/cullylarson/wp-deploy-database-sync",
             "keywords": [
                 "deploy",
                 "wordpress"
             ],
-            "time": "2015-09-14 02:17:30"
+            "time": "2015-11-09 21:30:34"
         },
         {
             "name": "cullylarson/wp-deploy-folder-sync",
@@ -329,7 +329,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=5.3.0"
+        "php": ">=5.4.0"
     },
     "platform-dev": []
 }

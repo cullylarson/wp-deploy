@@ -19,7 +19,6 @@ class Syncer {
      */
     private $databaseSync;
 
-    // TODO -- need to be able to do local_tmp setting
     public function __construct($sourceName, $destName, Config $config) {
         $this->sourceName = $sourceName;
         $this->destName = $destName;
@@ -66,8 +65,11 @@ class Syncer {
     }
 
     private function buildSshConnection($sshConfig) {
-        $c = ssh2_connect($sshConfig['host'], 22, array('hostkey'=>'ssh-rsa'));
-        ssh2_auth_agent($c, $sshConfig['username']);
+        $c = @ssh2_connect($sshConfig['host'], 22, array('hostkey'=>'ssh-rsa'));
+        if(!is_resource($c)) throw new \Exception("Could not connect to host: {$sshConfig['host']}");
+
+        $sshAuthSuccess = @ssh2_auth_agent($c, $sshConfig['username']);
+        if(!$sshAuthSuccess) throw new \Exception("Could not authenticate on host: {$sshConfig['host']}");
 
         return $c;
     }

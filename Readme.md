@@ -82,3 +82,15 @@ This command is used to pull changes from the destination to the source.
 ```
 % php vendor/bin/wp-pull
 ```
+
+## SSH Authentication
+
+The script using ssh-rsa trusted key authentication.  So, your local machine's key needs to be in the
+`authorized_keys` file on the source and destination, if they aren't local.  The script won't authenticate
+using passwords.
+
+If you're getting and authentication error, try running this:
+
+```
+% eval `ssh-agent -s` && ssh-add
+```

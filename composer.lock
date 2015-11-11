@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "98369986272a6ea4def5df4b84c0c7be",
-    "content-hash": "c78f8600f36f6d380dd4abc78fcda6d9",
+    "hash": "a25be4335c8953ad03eb3c9b7188899b",
+    "content-hash": "49523009482a0143a565d328221e6bf2",
     "packages": [
         {
             "name": "cullylarson/local-commands",

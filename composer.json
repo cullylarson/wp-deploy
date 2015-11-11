@@ -1,9 +1,9 @@
 {
-    "name": "cullylarson/wp-sync",
+    "name": "cullylarson/wp-deploy",
     "type": "library",
-    "description": "A set of command-line tools for syncing Wordpress installs. Easily used for automated deployment.",
+    "description": "A set of command-line tools for simple deployment of Wordpress installs. Can be used for automated deployment.",
     "keywords": ["wordpress", "command", "sync", "deploy", "deployment"],
-    "homepage": "https://github.com/cullylarson/wp-sync",
+    "homepage": "https://github.com/cullylarson/wp-deploy",
     "license": "MIT",
     "authors": [{
         "name": "Cully Larson",
